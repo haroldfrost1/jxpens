@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Login - JXPens</title>
+    </h:head>
+    <h:body>
+        <h1>Login</h1>
+        <h:form>
+            <!-- TODO: replace value with real value-->
+            <h:outputLabel value="Username: "/>
+            <h:inputText id="username" value="" requiredMessage="Please enter a username" required="true" converterMessage="Please enter a valid username" validatorMessage="Please enter a valid username"/>
+            <h:message for="username"/>
+            <h:outputLabel value="Password: "/>
+            <h:inputSecret id="password" value="" required="true" requiredMessage="Please enter a password"  converterMessage="Please enter a valid password" validatorMessage="Please enter a valid password"/>
+            <h:message for="password"/>
+            
+            <!-- TODO: Link to list page-->
+            <!--TODO: Data Validation-->
+            <h:commandButton value="Log in"/>
+        </h:form>
+    </h:body>
+</html>
+
