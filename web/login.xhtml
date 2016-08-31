@@ -10,15 +10,15 @@
         <h:form>
             <!-- TODO: replace value with real value-->
             <h:outputLabel value="Username: "/>
-            <h:inputText id="username" value="" requiredMessage="Please enter a username" required="true" converterMessage="Please enter a valid username" validatorMessage="Please enter a valid username"/>
+            <h:inputText id="username" value="#{userController.user.username}" requiredMessage="Please enter a username" required="true" converterMessage="Please enter a valid username" validatorMessage="Please enter a valid username"/>
             <h:message for="username"/>
             <h:outputLabel value="Password: "/>
-            <h:inputSecret id="password" value="" required="true" requiredMessage="Please enter a password"  converterMessage="Please enter a valid password" validatorMessage="Please enter a valid password"/>
+            <h:inputSecret id="password" value="#{userController.user.password}" required="true" requiredMessage="Please enter a password"  converterMessage="Please enter a valid password" validatorMessage="Please enter a valid password"/>
             <h:message for="password"/>
             
             <!-- TODO: Link to list page-->
             <!--TODO: Data Validation-->
-            <h:commandButton value="Log in"/>
+            <h:commandButton value="Log in" action="#{userController.authenticate}"/>
         </h:form>
     </h:body>
 </html>
