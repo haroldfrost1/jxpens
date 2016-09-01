@@ -32,6 +32,22 @@
                 </f:facet>
                 <h:outputText value="#{pen.colour}"/>
             </h:column>
+            <h:column>
+                <f:facet name="header">
+                    Edit
+                </f:facet>
+                <h:link value="Edit" outcome="editpen">
+                    <f:param name="index" value="#{pen.id}" />
+                </h:link>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    Delete
+                </f:facet>
+                <h:link value="Delete" outcome="deletepen">
+                    <f:param name="index" value="#{pen.id}" />
+                </h:link>
+            </h:column>
         </h:dataTable>
     </h:body>
 </html>

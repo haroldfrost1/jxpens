@@ -11,6 +11,7 @@ public class Pen {
     private String colour;
     private double nibSize;
     private String name;
+    private int id;
 
     public Pen() {
     }
@@ -20,6 +21,21 @@ public class Pen {
         this.colour = colour;
         this.nibSize = nibSize;
         this.name = name;
+    }
+
+    /**
+     * @return the id of the pen
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Set the id of the pen
+     * @param id 
+     */
+    public void setId(int id) {
+        this.id = id;
     }
     
     /**
