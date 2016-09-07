@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <f:metadata>
+        <f:viewAction action="#{penController.loadPen(param.index)}"/>
+    </f:metadata>
+    <h:head>
+        <title>Edit Pen</title>
+    </h:head>
+    <h:body>
+        <h1>Edit Pen</h1>
+        <h:form>
+            <p>
+                <label>Pen Name:
+                    <h:inputText value="#{penController.pen.name}"
+                                 id="name"
+                                 validatorMessage="You must enter a valid name"/>
+                </label>
+                <h:message for="name" />        
+            </p>
+            <p>
+                <label>Brand:
+                    <h:inputText value="#{penController.pen.brand}"
+                                 id="brand"
+                                 validatorMessage="Please enter a brand."
+                                 converterMessage="You must enter a valid brand."/>
+                </label>
+            </p>
+            <p>
+                <label>Nib Size:
+                    <h:inputText value="#{penController.pen.nibSize}"
+                                 a:type="number"
+                                 id="nibSize"
+                                 validatorMessage="Please enter a nib size, usually between 0.3 and 2.5mm."/>mm
+                    <h:message for="nibSize"/>
+                </label>
+            </p>
+            <p>
+                <label>Colour:
+                    <h:inputText value="#{penController.pen.colour}"
+                                 id="colour"
+                                 validatorMessage="Please enter a colour."
+                                 converterMessage="You must enter a valid color."/>
+                </label>
+            </p>
+            <p>
+                <h:inputHidden value="#{penController.pen.id}"/>
+                <h:button value="Cancel" outcome="penlist"/>
+                <h:commandButton value="Save" action="#{penController.updatePen()}"/>
+            </p>
+        </h:form>
+    </h:body>
+
+</html>
+

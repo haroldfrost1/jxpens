@@ -7,32 +7,53 @@
         <title>Create a Pen</title>
     </h:head>
     <h:body>
+        <div><
         <h:form>
             <p>
                 <label>
                     Pen Name:
-                    <h:inputText id="name" value="#{penController.pen.name}" validatorMessage="Please enter a valid name." converterMessage="Please enter a valid name." required="true" requiredMessage="Please enter a name."/>
+                    <h:inputText id="name" 
+                                 value="#{penController.pen.name}" 
+                                 validatorMessage="Please enter a valid name." 
+                                 converterMessage="Please enter a valid name." 
+                                 required="true" 
+                                 requiredMessage="Please enter a name."/>
                     <h:message for="name"/>
                 </label>
             </p>
             <p>
                 <label>
                     Brand: 
-                    <h:inputText id="brand" value="#{penController.pen.brand}" validatorMessage="Please enter a valid brand." converterMessage="Please enter a valid brand." required="true" requiredMessage="Please enter a brand."/>
+                    <h:inputText id="brand" 
+                                 value="#{penController.pen.brand}" 
+                                 validatorMessage="Please enter a valid brand." 
+                                 converterMessage="Please enter a valid brand." 
+                                 required="true" 
+                                 requiredMessage="Please enter a brand."/>
                     <h:message for="brand"/>
                 </label>
             </p>
             <p>
                 <label>
                     Nib Size:
-                    <h:inputText a:type="number" id="nibsize" value="#{penController.pen.nibSize}" validatorMessage="Please enter a valid size." converterMessage="Please enter a valid size." required="true" requiredMessage="Please enter a size."/>
-                    <h:message for="nibsize"/>
+                    <h:inputText a:type="number" 
+                                 id="nibsize" value="#{penController.pen.nibSize}" 
+                                 validatorMessage="Please enter a valid size." 
+                                 converterMessage="Please enter a valid size." 
+                                 required="true" 
+                                 requiredMessage="Please enter a size."/>
+                    <h:message for="nibsize"/> mm
                 </label>
             </p>
             <p>
                 <label>
                     Colour:
-                    <h:inputText id="colour" value="#{penController.pen.colour}" validatorMessage="Please enter a valid colour." converterMessage="Please enter a valid colour." required="true" requiredMessage="Please enter a colour."/>
+                    <h:inputText id="colour" 
+                                 value="#{penController.pen.colour}" 
+                                 validatorMessage="Please enter a valid colour." 
+                                 converterMessage="Please enter a valid colour." 
+                                 required="true" 
+                                 requiredMessage="Please enter a colour."/>
                     <h:message for="colour" />
                 </label>
             </p>

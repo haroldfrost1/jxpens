@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:metadata>
+        <f:viewAction action="#{penController.loadPen(index)}" />
+    </f:metadata>
+    <h:head>
+        <title>Delete Pen</title>
+    </h:head>
+    <h:body>
+        <h1>Delete Pen</h1>
+        <h:form>
+            <p>
+                <label>Pen Name:
+                    <h:outputText value="#{penController.pen.name}" />
+                </label>
+            </p>
+            <p>
+                <label>Brand:
+                    <h:outputText value="#{penController.pen.brand}" />
+                </label>
+            </p>
+            <p>
+                <label>Nib Size:
+                    <h:outputText value="#{penController.pen.nibSize}" />mm
+                </label>
+            </p>
+            <p>
+                <label>Colour:
+                    <h:outputText value="#{penController.pen.colour}" />
+                </label>
+            </p>
+            <p>
+                <h:inputHidden value="#{penController.pen.id}"/>
+                <h:button value="Cancel" outcome="penlist"/>
+                <h:commandButton value="Delete" action="#{penController.delete}"/>
+            </p>
+        </h:form>
+    </h:body>
+</html>
+

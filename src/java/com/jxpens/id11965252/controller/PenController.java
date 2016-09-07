@@ -3,51 +3,70 @@ package com.jxpens.id11965252.controller;
 import com.jxpens.id11965252.model.Pen;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 /**
- * Handles CRUD operations of Pens
+ * A backing bean for the pen list JSF view
+ *
  * @author Shaoxi He 11965252
  */
 @Named
 @SessionScoped
-public class PenController implements Serializable{
+public class PenController implements Serializable {
 
     private Pen pen = new Pen();
-    
+
     /**
-     * @return the current pen object
+     * the current pen object/model that this controller will manipulate
+     * @return
      */
-    public Pen getPen(){
+    public Pen getPen() {
         return pen;
     }
-    
-    public String saveNewPen(){
+
+    /**
+     * Save the current pen as a new record in the database.
+     * @return a redirect to view the whole pen list
+     */
+    public String saveNewPen() {
         // TODO: link to database
-        return "penlist";
+        return "penlist?faces-redirect=true";
     }
-    
-    public String updatePen(){
+
+    /**
+     * Update the record in the database whose database id matches that of the current pen.
+     * @return a redirect to view the whole pen list
+     */
+    public String updatePen() {
         // TODO: link to database
-        return "penlist";
+        return "penlist?faces-redirect=true";
     }
-    
-    public String deletePen(int index){
+
+    /**
+     * Delete the record from the database that matches the current pen's database id.
+     * @return a redirect to view the whole pen list
+     */
+    public String delete() {
         // TODO: link to database
-        return "penlist";
+        return "penlist?faces-redirect=true";
     }
-    
-    public void loadPen(int index){
+
+    /**
+     * Load the details of a pen from the database.
+     * @param index the unique database id of the pen to retrieve
+     */
+    public void loadPen(int index) {
         // TODO: link to databse
     }
-    
+
     /**
-     * @return an ArrayList contains Pen objects
+     * Returns a collection containing the entire pen list database.
+     * @return 
      */
-    public ArrayList<Pen> getPens(){
+    public Collection<Pen> getPens() {
         // TODO: link to database
         return null;
     }
-    
 }

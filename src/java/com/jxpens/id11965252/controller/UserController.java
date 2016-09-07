@@ -16,18 +16,19 @@ public class UserController implements Serializable{
     private User user = new User();
     
     /**
-     * @return the current user
+     * the current user that is logged in
+     * @return 
      */
     public User getUser(){
         return user;
     }
     
     /**
-     * Authenticate the user information
+     * Authenticate the user information then put the user into session
      * if user exists
-     * @return the navigation to penlist
+     * @return the redirect to penlist
      * otherwise
-     * @return the navigation to error page
+     * @return the redirect to error page
      */
     public String authenticate(){
         return "penlist";

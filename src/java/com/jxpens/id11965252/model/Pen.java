@@ -1,9 +1,10 @@
 package com.jxpens.id11965252.model;
 
 /**
- * Pen (Data Transfer Object or Model)
- * Contains basic attributes of a Pen
- * @author Shaoxi He 11965252
+ * A bean that represents a pen in the inventory.
+ * Each pen has a name, nib size, a brand, a colour and a unique database ID.
+ * The database ID will be set by the database automatically.
+ * @author Shaoxi He
  */
 public class Pen {
 
