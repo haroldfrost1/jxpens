@@ -1,10 +1,11 @@
 package com.jxpens.id11965252.controller;
 
+import com.jxpens.id11965252.dbhelper.PenDAO;
+import com.jxpens.id11965252.exception.DataStoreException;
 import com.jxpens.id11965252.model.Pen;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 /**
@@ -13,7 +14,7 @@ import javax.inject.Named;
  * @author Shaoxi He 11965252
  */
 @Named
-@SessionScoped
+@RequestScoped
 public class PenController implements Serializable {
 
     private Pen pen = new Pen();
@@ -65,8 +66,7 @@ public class PenController implements Serializable {
      * Returns a collection containing the entire pen list database.
      * @return 
      */
-    public Collection<Pen> getPens() {
-        // TODO: link to database
-        return null;
+    public ArrayList<Pen> getAllPens() throws DataStoreException {
+        return new PenDAO().findAll();
     }
 }
