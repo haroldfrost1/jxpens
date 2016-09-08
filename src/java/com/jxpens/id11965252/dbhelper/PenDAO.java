@@ -82,7 +82,7 @@ public class PenDAO {
      * @return a Data Transfer Object corresponding to the username, or null if no matching user was found
      * @throws DataStoreException if an exception occurred while communicating with the database.
      */
-    public Pen findPen(int id) throws SQLException, NamingException, DataStoreException {
+    public Pen findPen(int id) throws DataStoreException {
         try {
             DataSource dataSource = InitialContext.doLookup(JNDI_NAME);
             try (Connection conn = dataSource.getConnection();

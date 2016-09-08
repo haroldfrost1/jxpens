@@ -4,6 +4,7 @@ import com.jxpens.id11965252.dbhelper.PenDAO;
 import com.jxpens.id11965252.exception.DataStoreException;
 import com.jxpens.id11965252.model.Pen;
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
@@ -57,14 +58,16 @@ public class PenController implements Serializable {
     /**
      * Load the details of a pen from the database.
      * @param index the unique database id of the pen to retrieve
+     * @throws com.jxpens.id11965252.exception.DataStoreException
      */
-    public void loadPen(int index) {
-        // TODO: link to databse
+    public void loadPen(int index) throws DataStoreException  {
+        this.pen = new PenDAO().findPen(index);
     }
 
     /**
      * Returns a collection containing the entire pen list database.
      * @return 
+     * @throws com.jxpens.id11965252.exception.DataStoreException 
      */
     public ArrayList<Pen> getAllPens() throws DataStoreException {
         return new PenDAO().findAll();
