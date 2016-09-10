@@ -25,7 +25,7 @@ This README would give details of the project and the steps to setup the project
 git clone https://ShaoxiHe@bitbucket.org/ShaoxiHe/jxpens.git
 ```
 
-1. ### Database Configuration ###
+### Database Configuration ###
 Create a Database following the instructions provided in the link, but without creating any tables:
 [https://benatuts.github.io/aip/05-practice.html](Link URL)
 
@@ -34,8 +34,8 @@ This will create jdbc connection pool, container and realm
 
 
 Finally, run the sql file named create_jxpens_db.sql located in the project directory to create tables needed.
-
-1. Dependencies
+### 
+Dependencies ###
 
 
 
