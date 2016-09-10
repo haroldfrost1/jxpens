@@ -11,6 +11,11 @@ This README would give details of the project and the steps to setup the project
 * Delete a record of a pen
 * Logout
 
+### Innovation Functionality ###
+* RESTful API which outputs XML
+* Register
+* Beautiful UI
+
 ### How do I get set up? ###
 
 * Summary of set up
