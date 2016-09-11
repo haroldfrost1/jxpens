@@ -32,9 +32,10 @@
             <p>
                 <label>Nib Size:
                     <h:inputText value="#{penController.pen.nibSize}"
-                                 a:type="number"
                                  id="nibSize"
-                                 validatorMessage="Please enter a nib size, usually between 0.3 and 2.5mm."/>mm
+                                 validatorMessage="Please enter a nib size between 0.3 and 2.5mm."> 
+                        <f:validateDoubleRange minimum="0.3" maximum="2.5"/>
+                    </h:inputText>mm
                     <h:message for="nibSize"/>
                 </label>
             </p>

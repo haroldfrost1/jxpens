@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 /**
  * User (Data Transfer Object or Model)
- * Contains information of a user
+ * Each User will have a unique username and a password
  * @author Shaoxi He 11965252
  */
-public class User implements Serializable{
+public class Account implements Serializable{
     
     private String username;
     private String password;
 
-    public User() {
+    public Account() {
     }
 
     public String getUsername() {

@@ -25,3 +25,20 @@ INSERT INTO pen(pen_name,brand,nib_size,colour) values('Test brush', '晨光', 2
 
 -- Checking Table Data
 SELECT * FROM pen;
+
+-- User details
+create table account (
+    username varchar(255) not null primary key,
+    password varchar(255) not null
+ );
+
+-- User view used by JDBC Realm
+create view jdbcrealm_user (username, password) as
+select username, password
+from account;
+
+-- Group view used by JDBC Realm
+-- This view ensure every account belongs in the 'Users' group
+create view jdbcrealm_group (username, groupname) as
+select username, 'Users'
+from account;
