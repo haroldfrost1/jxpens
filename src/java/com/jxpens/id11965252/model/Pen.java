@@ -1,11 +1,15 @@
 package com.jxpens.id11965252.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * A bean that represents a pen in the inventory.
  * Each pen has a name, nib size, a brand, a colour and a unique database ID.
  * The database ID will be set by the database automatically.
  * @author Shaoxi He
  */
+@XmlRootElement(name="pen")
 public class Pen {
 
     private String brand;
@@ -27,6 +31,7 @@ public class Pen {
     /**
      * @return the id of the pen
      */
+    @XmlElement(name = "id")
     public int getId() {
         return id;
     }
@@ -42,6 +47,7 @@ public class Pen {
     /**
      * @return the brand
      */
+    @XmlElement(name = "brand")
     public String getBrand() {
         return brand;
     }
@@ -57,6 +63,7 @@ public class Pen {
     /**
      * @return the Colour
      */
+    @XmlElement(name = "colour")
     public String getColour() {
         return colour;
     }
@@ -72,6 +79,7 @@ public class Pen {
     /**
      * @return the nib size
      */
+    @XmlElement(name = "nibsize")
     public double getNibSize() {
         return nibSize;
     }
@@ -87,6 +95,7 @@ public class Pen {
     /**
      * @return the name of the pen
      */
+    @XmlElement(name = "pen-name")
     public String getName() {
         return name;
     }
