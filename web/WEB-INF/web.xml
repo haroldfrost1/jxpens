@@ -14,7 +14,8 @@
         <web-resource-collection>
             <web-resource-name>secure</web-resource-name>
             <url-pattern>/faces/welcome.xhtml</url-pattern>
-            <url-pattern>/faces/secret/*</url-pattern>
+            <url-pattern>/faces/app/*</url-pattern>
+            <url-pattern>/rest/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>Users</role-name>
