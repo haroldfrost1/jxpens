@@ -29,6 +29,13 @@ git clone https://ShaoxiHe@bitbucket.org/ShaoxiHe/jxpens.git
 Create a Database following the instructions provided in the link, but without creating any tables:
 [https://benatuts.github.io/aip/05-practice.html](Link URL)
 
+Steps:
+
+1. Create a JavaDB database with the name, username and password assigned to "**aip**" without the quotes.
+1. Run the SQL file name **create_jxpens_db.sql** to setup table structures in the database
+1. Go the GlassFish Admin Console, Create a connection pool called **AIPPool**, with the Type javax.sql.DataSource and **JavaDB** driver.
+
+
 This will create jdbc connection pool, container and realm
 
 
