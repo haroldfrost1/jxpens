@@ -8,9 +8,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import com.jxpens.id11965252.util.EncryptionUtil;
 import java.security.NoSuchAlgorithmException;
 
@@ -42,7 +39,7 @@ public class AccountController implements Serializable {
      */
     private void showError(String message) {
         FacesContext context = FacesContext.getCurrentInstance();
-        context.addMessage(null, new FacesMessage(message));
+        context.addMessage("form-rego:regofail", new FacesMessage(message));
     }
     
     /**

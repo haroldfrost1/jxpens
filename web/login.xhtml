@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Login - JXPens</title>
         <h:outputStylesheet library="css" name="bootstrap.min.css"/>
@@ -12,39 +13,53 @@
     </h:head>
     <h:body>
 
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <h:link class="navbar-brand" value="JXPens" outcome="penlist"/>
-            </div>
-        </nav>
+        <ui:include src="nav-header.xhtml"/>
 
-        <h:panelGroup layout="block" class="container">
-            <h:form rendered="#{empty loginController.loggedUser}" class="form-signin">
+        <h:panelGroup layout="block" class="container" rendered="#{empty loginController.loggedUser}">
+            <h:form class="form-signin" id="form-login">
                 <h2 class="form-signin-heading">Login</h2>
                 <h:outputLabel value="Username: " class="sr-only" for="username"/>
                 <h:inputText id="username" 
                              value="#{loginController.account.username}" 
                              requiredMessage="Please enter a username" 
                              required="true" 
-                             converterMessage="Please enter a username" 
                              validatorMessage="Please enter a valid username"
                              class="form-control"
                              a:placeholder="Username"/>
-
-                <h:outputLabel value="Password: " class="sr-only"/>
+                
+                <h:message for="username" class="error"/>
+                
+                <h:outputLabel value="Password: " class="sr-only" for="password"/>
                 <h:inputSecret id="password"
                                value="#{loginController.account.password}" 
                                required="true" 
                                requiredMessage="Please enter a password"  
-                               converterMessage="Please enter a valid password"
                                validatorMessage="Please enter a valid password"
                                class="form-control"
                                a:placeholder="Password"/>
-                <h:messages style="color: red; font: bold" />
-
+                <h:message for="username" class="error"/>
+                <h:message id="loginfail" for="loginfail" class="error"/>
+                
                 <h:commandButton value="Log in" action="#{loginController.login}"
                                  class="btn btn-lg btn-primary btn-block"/>
-                <h:link outcome="register.xhtml" class="btn btn-lg" value="register"/>
+                <h:link outcome="register.xhtml" class="btn btn-lg" value="I don't have an account."/>
+            </h:form>
+        </h:panelGroup>
+
+        <h:panelGroup layout="block" class="container" rendered="#{not empty loginController.loggedUser}">
+            <h:form class="form-signin">
+                <h2 class="form-signin-heading">Hello, </h2>
+                <p>
+                    <h:outputText value="You are currently logged as #{loginController.loggedUser}."/>
+                </p>
+                <p>
+                    You can:
+                </p>
+                <ul>
+                    <li>
+                        <h:link value="Go to pen list page" class="btn" outcome="app/penlist.xhtml"/>
+                    </li>
+                </ul>
             </h:form>
         </h:panelGroup>
     </h:body>

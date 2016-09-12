@@ -31,27 +31,30 @@ public class PenController implements Serializable {
     /**
      * Save the current pen as a new record in the database.
      * @return a redirect to view the whole pen list
+     * @throws com.jxpens.id11965252.exception.DataStoreException
      */
-    public String saveNewPen() {
-        // TODO: link to database
+    public String saveNewPen() throws DataStoreException {
+        new PenDAO().createPen(pen);
         return "penlist?faces-redirect=true";
     }
 
     /**
      * Update the record in the database whose database id matches that of the current pen.
      * @return a redirect to view the whole pen list
+     * @throws com.jxpens.id11965252.exception.DataStoreException
      */
-    public String updatePen() {
-        // TODO: link to database
+    public String updatePen() throws DataStoreException {
+        new PenDAO().updatePen(pen);
         return "penlist?faces-redirect=true";
     }
 
     /**
      * Delete the record from the database that matches the current pen's database id.
      * @return a redirect to view the whole pen list
+     * @throws com.jxpens.id11965252.exception.DataStoreException
      */
-    public String delete() {
-        // TODO: link to database
+    public String delete() throws DataStoreException {
+        new PenDAO().deletePen(pen);
         return "penlist?faces-redirect=true";
     }
 

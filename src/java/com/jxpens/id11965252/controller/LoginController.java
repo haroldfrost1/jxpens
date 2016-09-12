@@ -12,7 +12,6 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 /**
  * A Backing bean handles user Login and Logout
@@ -47,9 +46,7 @@ public class LoginController {
 
         try {
             request.login(this.account.getUsername(), this.account.getPassword());
-//            HttpSession session = request.getSession();
-//            session.setAttribute("username", this.account.getUsername());
-            return "/welcome?faces-redirect=true";
+            return "/app/penlist?faces-redirect=true";
 
         } catch (ServletException e) {
             showError("Incorrect username or password.");
@@ -90,7 +87,7 @@ public class LoginController {
      */
     private void showError(String message) {
         FacesContext context = FacesContext.getCurrentInstance();
-        context.addMessage(null, new FacesMessage(message));
+        context.addMessage("form-login:loginfail", new FacesMessage(message));
     }
 
 }

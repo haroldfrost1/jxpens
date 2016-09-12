@@ -2,42 +2,60 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <f:metadata>
         <f:viewAction action="#{penController.loadPen(param.index)}" />
     </f:metadata>
     <h:head>
         <title>Delete Pen</title>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="createpen.css"/>
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputScript library="js" name="jquery.min.js" />
     </h:head>
     <h:body>
-        <h1>Are you sure to delete this pen?</h1>
-        <h:form>
-            <p>
-                <label>Pen Name:
-                    <h:outputText value="#{penController.pen.name}" />
-                </label>
-            </p>
-            <p>
-                <label>Brand:
-                    <h:outputText value="#{penController.pen.brand}" />
-                </label>
-            </p>
-            <p>
-                <label>Nib Size:
-                    <h:outputText value="#{penController.pen.nibSize}" />mm
-                </label>
-            </p>
-            <p>
-                <label>Colour:
-                    <h:outputText value="#{penController.pen.colour}" />
-                </label>
-            </p>
-            <p>
+        <ui:include src="/nav-header.xhtml" />
+        <h:panelGroup layout="block" class="container">
+            <h:form class="form-createpen">
+                <h1>Are you sure to delete this pen?</h1>
+                <div class="form-group">
+                    <label for="name">
+                        Pen Name:
+                    </label>
+                    <div class="well">
+                        <h:outputText value="#{penController.pen.name}" class="form-control-static"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="brand">
+                        Brand: 
+                    </label>
+                    <div class="well">
+                        <h:outputText value="#{penController.pen.brand}" class="form-control-static"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nibsize">
+                        Nib Size:
+                    </label>
+                    <div class="well">
+                        <h:outputText value="#{penController.pen.nibSize}" class="form-control-static"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="colour">
+                        Colour:
+                    </label>
+                    <div class="well">
+                        <h:outputText value="#{penController.pen.colour}" class="form-control-static"/>
+                    </div>
+                </div>
                 <h:inputHidden value="#{penController.pen.id}"/>
-                <h:button value="Cancel" outcome="penlist"/>
-                <h:commandButton value="Confirm" action="#{penController.delete}"/>
-            </p>
-        </h:form>
+                <h:commandButton value="Delete" action="#{penController.delete}" class="btn btn-danger"/>
+                <h:link value="Cancel" outcome="/app/penlist" class="btn btn-default"/>
+            </h:form>
+        </h:panelGroup>
     </h:body>
 </html>
 
