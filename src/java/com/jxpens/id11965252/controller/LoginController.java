@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * A Backing bean handles user Login and Logout
- *
+ * 
  * @author harold
  */
 @Named

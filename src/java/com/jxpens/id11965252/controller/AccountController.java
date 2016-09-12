@@ -12,7 +12,8 @@ import com.jxpens.id11965252.util.EncryptionUtil;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * Handles login authentication
+ * A backing bean Handles Account information manipulation
+ * Provides function to register
  *
  * @author Shaoxi He 11965252
  */

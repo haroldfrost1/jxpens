@@ -25,6 +25,12 @@ public class AccountDAO {
     private static final String JNDI_NAME = "jdbc/aip";
     private static final String ACCOUNT_REGISTER = "INSERT INTO account(username,password) VALUES(?,?)";
     
+    /**
+     * Creates a new record of account in the database
+     * 
+     * @param account passed from backing bean
+     * @throws DataStoreException 
+     */
     public void register(Account account) throws DataStoreException{
         try{
             DataSource dataSource = InitialContext.doLookup(JNDI_NAME);

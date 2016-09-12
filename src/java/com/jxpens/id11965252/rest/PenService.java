@@ -10,7 +10,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
 /**
- *
+ * A RESTful service class that provides data manipulation for Pen
+ * 
  * @author Shaoxi He 11965252
  */
 @Stateless
@@ -20,6 +21,13 @@ public class PenService {
     @Context
     private ServletContext context;
 
+    /**
+     * Retrieves a single pen from the database
+     * and output it into XML format with defined mapping
+     * @param id
+     * @return
+     * @throws DataStoreException 
+     */
     @Path("search")
     @GET
     @Produces(MediaType.APPLICATION_XML)
@@ -27,6 +35,12 @@ public class PenService {
         return new PenDAO().findPen(id);
     }
     
+    /**
+     * Retrieves a list of all pens from the database
+     * and outputs them into XML format with defined mapping
+     * @return
+     * @throws DataStoreException 
+     */
     @GET
     @Produces(MediaType.APPLICATION_XML)
     public ArrayList<Pen> findAll() throws DataStoreException{

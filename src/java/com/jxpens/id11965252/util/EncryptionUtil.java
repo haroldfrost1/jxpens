@@ -27,6 +27,11 @@ public class EncryptionUtil {
         return bytesToHex(md.digest());
     }
 
+    /**
+     * Converts byets string to Hex values
+     * @param bytes
+     * @return 
+     */
     public static String bytesToHex(byte[] bytes) {
         StringBuffer result = new StringBuffer();
         for (byte byt : bytes) {
